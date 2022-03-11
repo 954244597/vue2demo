@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <el-aside width="200px"> <sider></sider> </el-aside>
+    <el-aside width="auto"> <sider></sider> </el-aside>
     <el-container>
       <el-header>Header</el-header>
       <el-main> <router-view></router-view> </el-main>
@@ -32,6 +32,7 @@ export default {
 <style lang="less">
 .el-header {
   background: #333;
+  width: 100%;
 }
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
@@ -39,5 +40,12 @@ export default {
 }
 .el-container {
   height: 100%;
+  width: 100%;
+}
+.el-container {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
 </style>

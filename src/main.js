@@ -80,7 +80,6 @@ import {
   Notification,
 } from "element-ui";
 
-
 Vue.config.productionTip = false;
 
 Vue.use(Pagination);
@@ -164,10 +163,11 @@ Vue.prototype.$prompt = MessageBox.prompt;
 Vue.prototype.$notify = Notification;
 Vue.prototype.$message = Message;
 import router from "./router";
+import store from "./store/index.js";
 Vue.use(Loading.directive);
 
-
 new Vue({
+  store,
   router,
   render: (h) => h(App),
 }).$mount("#app");

@@ -2,14 +2,12 @@
   <el-menu
     default-active="1-4-1"
     class="el-menu-vertical-demo"
-    @open="handleOpen"
-    @close="handleClose"
-    :collapse="isCollapse"
+    :collapse="isCollapsesss"
     background-color="#545c64"
     active-text-color="#ffd04b"
     text-color="#fff"
   >
-    <h3>通用后台</h3>
+    <h3 @click="clickOpen">通用后台</h3>
     <el-menu-item
       v-for="item in noCHildren"
       :index="item.path"
@@ -54,7 +52,6 @@
 export default {
   data() {
     return {
-      isCollapse: false,
       menu: [
         {
           path: "/",
@@ -107,19 +104,19 @@ export default {
     haxCHildren() {
       return this.menu.filter((item) => item.children);
     },
+    isCollapsesss() {
+      console.log(this.$store.state.tab.isCollapse, "sddsd");
+      return this.$store.state.tab.isCollapse;
+    },
   },
   methods: {
     clickMenu(item) {
-      console.log(this.$router, "sddsd", item.name);
       this.$router.push({
         name: item.name,
       });
     },
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
-    },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
+    clickOpen() {
+      this.$store.commit("collapseMenu");
     },
   },
 };
