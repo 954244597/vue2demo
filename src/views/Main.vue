@@ -17,7 +17,7 @@ export default {
   data() {
     return {
       // isCollapse: true,
-    };
+    }; 
   },
   methods: {
     handleOpen(key, keyPath) {
